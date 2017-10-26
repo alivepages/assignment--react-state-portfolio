@@ -44,12 +44,12 @@ export default class FilterProjects extends Component {
         obj.type = 'solo';
       }
       return (
-        obj.type === this.state.projectType
+        this.state.projectType === obj.type
         || this.state.projectType === 'all'
       )
     })
     .map((obj, index) => {
-      return <Project name = {obj.projectName} type = {obj.type} key={index}/>
+      return <Project name = {obj.projectName} type = {obj.type} key = {index}/>
     })
 
     return (
