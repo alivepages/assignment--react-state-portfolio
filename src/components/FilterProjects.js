@@ -24,8 +24,8 @@ import Project from './Project'
  */
 
 export default class FilterProjects extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
       projectType: 'all'
     }
@@ -41,16 +41,13 @@ export default class FilterProjects extends Component {
     let projets = this.props.data.filter((obj) => {
       obj.type = 'team';
       if (obj.solo) {
-        obj.type = 'solo'
+        obj.type = 'solo';
       }
-      if (obj.type === this.state.projectType
+      return (
+        obj.type === this.state.projectType
         || this.state.projectType === 'all'
-      ) {
-        return true
-      }
-      return false
+      )
     })
-
     .map((obj, index) => {
       return <Project name = {obj.projectName} type = {obj.type} key={index}/>
     })
