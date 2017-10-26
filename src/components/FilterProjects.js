@@ -38,7 +38,8 @@ export default class FilterProjects extends Component {
   }
 
   render() {
-    let projets = this.props.data.filter((obj) => {
+    let projets = this.props.data
+    .filter((obj) => {
       obj.type = 'team';
       if (obj.solo) {
         obj.type = 'solo';
