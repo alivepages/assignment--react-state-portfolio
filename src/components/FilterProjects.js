@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-//import { projectData } from '../data/datasource'
+import { projectData } from '../data/datasource'
 import Project from './Project'
+
 /*  Advice:
    (1) Create the component's JSX by using .map() on `projectData`
 
@@ -38,8 +39,8 @@ export default class FilterProjects extends Component {
   }
 
   render() {
-    let projets = this.props.data
-    .filter((obj) => {
+    let projets = {projectData}
+    projets = projets.projectData.filter((obj) => {
       obj.type = 'team';
       if (obj.solo) {
         obj.type = 'solo';
