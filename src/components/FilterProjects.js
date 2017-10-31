@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { projectData } from '../data/datasource'
 import Project from './Project'
 
 /*  Advice:
@@ -25,6 +24,7 @@ import Project from './Project'
  */
 
 export default class FilterProjects extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -39,8 +39,7 @@ export default class FilterProjects extends Component {
   }
 
   render() {
-    let projets = {projectData}
-    projets = projets.projectData.filter((obj) => {
+    let projets = this.props.projectData.filter((obj) => {
       obj.type = 'team';
       if (obj.solo) {
         obj.type = 'solo';

@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav'
 import Projects from './components/Projects'
 import Cv from './components/Cv'
+import {skills, eduList, jobsList, projectData} from './data/datasource'
 
 class App extends Component {
   render() {
@@ -12,8 +13,12 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route exact path="/cv" component={Cv} />
-          <Route path="/projects" component={Projects}/>
+          <Route exact path="/cv" render = {(props) => (
+              <Cv {... props} skills={skills} eduList={eduList} jobsList={jobsList} />
+          )} />
+          <Route path="/projects" render = {(props) => (
+              <Projects {... props} projectData={projectData} />
+          )} />
         </Switch>
       </div>
     );

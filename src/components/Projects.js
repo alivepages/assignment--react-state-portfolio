@@ -7,7 +7,7 @@ class Projects extends Component {
     return (
       <div>
       <ShowHideTech />
-      <FilterProjects/>
+      <FilterProjects projectData={this.props.projectData} />
       </div>
     );
   }
