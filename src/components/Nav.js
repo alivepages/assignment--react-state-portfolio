@@ -9,7 +9,7 @@ class Nav extends Component {
         <h3>Menu</h3>
         <hr/>
         <Link to="/">Home</Link>
-        <Link to="/cv">Technologies</Link>
+        <Link to="/cv">CV</Link>
         <Link to="/projects">Projects</Link>
       </nav>
     );

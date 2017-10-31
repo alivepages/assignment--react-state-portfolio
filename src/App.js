@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import ShowHideTech from './components/ShowHideTech'
-import FilterProjects from './components/FilterProjects'
 import HomeView from './components/HomeView'
 import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav'
-
+import Projects from './components/Projects'
+import Cv from './components/Cv'
 
 class App extends Component {
   render() {
@@ -13,8 +12,8 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route exact path="/cv" component={ShowHideTech} />
-          <Route path="/projects" component={FilterProjects}/>
+          <Route exact path="/cv" component={Cv} />
+          <Route path="/projects" component={Projects}/>
         </Switch>
       </div>
     );
